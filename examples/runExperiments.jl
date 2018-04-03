@@ -9,7 +9,7 @@ include("getAnalyticalMediums.jl");
 include("getWorkUnit.jl");
 
 function runPaperExperiments()
-numOfRefinements = 4; 
+numOfRefinements = 6; 
 
 println("******************** 2D experiments ***************************");
 
@@ -79,7 +79,7 @@ println("***********************************************************************
 I = [1.6,1.6,0.8];
 n = zeros(Int64,3);
 
-numOfRefinements = 4;
+numOfRefinements = 6;
 
 h0 = [0.1,0.1,0.1];
 WU = zeros(numOfRefinements)

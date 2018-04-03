@@ -138,7 +138,7 @@ source3 = (src[3]-1)*h[3];
 
 X1,X2,X3 = ndgrid((0:(n[1]-1))*h[1] - source1,(0:(n[2]-1))*h[2] - source2,(0:(n[3]-1))*h[3] - source3);
 
-r = sqrt(X1.^2 + X2.^2 + X3.^2);
+r = sqrt.(X1.^2 + X2.^2 + X3.^2);
 T = r;
 G2 = X2.*(1./r);
 G2[src[1],src[2],src[3]] = 1/sqrt(3);
