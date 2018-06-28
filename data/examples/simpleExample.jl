@@ -10,7 +10,7 @@
 using jInv.Mesh
 using FactoredEikonalFastMarching
 
-plotting = true; 
+plotting = false; 
 if plotting
 	using PyPlot;
 	using jInvVis;

@@ -1,33 +1,39 @@
-[![Build Status](https://travis-ci.org/JuliaInv/FactoredEikonalFastMarching.jl.svg?branch=master)](https://travis-ci.org/JuliaInv/FactoredEikonalFastMarching.jl)
-[![Coverage Status](https://coveralls.io/repos/github/JuliaInv/FactoredEikonalFastMarching.jl/badge.svg?branch=master)](https://coveralls.io/github/JuliaInv/FactoredEikonalFastMarching.jl?branch=master)
-[![Build status](https://ci.appveyor.com/api/projects/status/9pqt8ragr0icc9ss?svg=true)](https://ci.appveyor.com/project/lruthotto/factoredeikonalfastmarching-jl)
+# Julia article containerized with Docker and Singularity
 
+## Docker
 
-# FactoredEikonalFastMarching.jl
-Julia Package for solving the factored eikonal equation on a regular rectangular mesh using the fast marching algorithm.
+### From docker hub without cloning this repo:
 
-Based on the following paper (please cite if you are using the package):
+1) `docker run -it adb16x/julia_test:fresh`
 
-Eran Treister and Eldad Haber, A fast marching algorithm for the factored eikonal equation, Under review.
+2) When inside the container:
+	`sh run.sh`
 
-# Requirements
+3) The output is stored in `results.txt`
 
-This package is intended to use with julia versions 0.4.x.
+### By cloning this repo:
 
-This package is an add-on for jInv, which needs to be installed. This is for having a Mesh module.
+1) `docker build --no-cache -t julia .`
 
-# Installation
+2) `docker run -it julia`
 
-```
-Pkg.clone("https://github.com/JuliaInv/jInv.jl","jInv")
-Pkg.clone("https://github.com/JuliaInv/FactoredEikonalFastMarching.jl","FactoredEikonalFastMarching")
-Pkg.test("FactoredEikonalFastMarching")
-```
+3) When inside the container:
+	`sh run.sh`
 
-# Examples
+4) The output is stored in `results.txt`
 
-Under "examples/simpleExample.jl" you can find how to set a simple travel time calculation.
+## Singularity
 
-Under "examples/runExperiments.jl" you can find the experiments that were shown in the paper above. 
+1) Build image **and** run the code:
+	`sudo singularity --debug build test.simg Singularity |& tee sing-build.output`
 
+2) Go into the image:
+	`singularity shell test.simg`
 
+3) View the results:
+	`cat /usr/local/data/results.txt`
+
+## Notes
+
+* Any output/issues with the build can be view at: `cat sing-build.output`
+* To reproduce all 6 rows, change the `numOfRefinements` to 6. It consumes a lot of memory though.
