@@ -1,16 +1,16 @@
-FROM blitznote/debase:16.04 
+FROM blitznote/debase:16.04
 
 WORKDIR /app
 ADD . /app
 
 RUN \
   apt-get update \
-  && apt-get install -y build-essential cmake python python-pip wget nano 
+  && apt-get install -y build-essential cmake python python-pip wget nano
 
 RUN pip install --upgrade pip
-RUN pip install matplotlib 
+RUN pip install matplotlib
 
-RUN cd ../opt 
+RUN cd ../opt
 RUN wget -q --no-check-certificate https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.3-linux-x86_64.tar.gz \
   && mkdir julia \
   && tar -zxf julia-0.6.3-linux-x86_64.tar.gz -C julia --strip-components 1 \
