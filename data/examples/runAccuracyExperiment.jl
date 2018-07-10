@@ -4,13 +4,14 @@ Omega[2:2:end] = (n-1).*h;
 Mesh = getRegularMesh(Omega,n-1);
 ##########################################################
 
-# if length(n)==2
-# 	matshow(sqrt(kappaSquared)); colorbar();
-# 	xlabel("y");
-# 	ylabel("x");
-# 	xticks(0:div(n[2],8):n[2],0:1:8);
-# 	yticks(0:div(n[1],4):n[1],0:1:4);
-# end
+if length(n)==2
+	matshow(sqrt(kappaSquared)); colorbar();
+	xlabel("y");
+	ylabel("x");
+ 	xticks(0:div(n[2],8):n[2],0:1:8);
+ 	yticks(0:div(n[1],4):n[1],0:1:4);
+	savefig("figure.png")
+end
 
 
 pMem = getEikonalTempMemory(n);
@@ -65,43 +66,42 @@ ERR2 = T_exact - pEik.T1;
 
 @printf("[%3.2e,%3.2e]\t%3.2fs(%3.2f)\n",vecnorm(ERR2,Inf),vecnorm(ERR2,2)/sqrtN,t2,t2/WU);
 
-# if length(n)==2
-	# figure()
-	# contour(T_exact[end:-1:1,:],20,linestyles = "-",colors = "black",linewidths=1.5)
-	# contour(T1[end:-1:1,:],20,linestyles = ":",colors = "red", linewidths=1.5)
-	# contour(T2[end:-1:1,:],20,linestyles = "--",colors = "blue", linewidths=1.5)
-	# xlabel("y");
-	# ylabel("x");
-	# xticks(0:div(n[2],8):n[2],0:1:8);
-	# yticks(0:div(n[1],4):n[1],4:-1:0);
+if length(n)==2
+	figure()
+	contour(T_exact[end:-1:1,:],20,linestyles = "-",colors = "black",linewidths=1.5)
+	contour(T1[end:-1:1,:],20,linestyles = ":",colors = "red", linewidths=1.5)
+	contour(T2[end:-1:1,:],20,linestyles = "--",colors = "blue", linewidths=1.5)
+	xlabel("y");
+	ylabel("x");
+	xticks(0:div(n[2],8):n[2],0:1:8);
+	yticks(0:div(n[1],4):n[1],4:-1:0);
 
+	matshow(abs(T1 - T_exact)); colorbar();
+	xlabel("y");
+	ylabel("x");
+	xticks(0:div(n[2],8):n[2],0:1:8);
+	yticks(0:div(n[1],4):n[1],0:1:4);
 	
-	# matshow(abs(T1 - T_exact)); colorbar();
-	# xlabel("y");
-	# ylabel("x");
-	# xticks(0:div(n[2],8):n[2],0:1:8);
-	# yticks(0:div(n[1],4):n[1],0:1:4);
+	matshow(abs(T2 - T_exact)); colorbar();
+	xlabel("y");
+	ylabel("x");
+	xticks(0:div(n[2],8):n[2],0:1:8);
+	yticks(0:div(n[1],4):n[1],0:1:4);
+	savefig("figure2.png")
+end
+
+if length(n)==2
+	figure()
+	contour(T_exact[end:-1:1,:],100,linestyles = "-",colors = "black",linewidths=2.0)
+	contour(T1[end:-1:1,:],100,linestyles = ":",colors = "red", linewidths=2.0)
+	contour(T2[end:-1:1,:],100,linestyles = "--",colors = "blue", linewidths=2.0)
+	xlabel("y");
+	ylabel("x");
+	xticks(0:div(n[2],16):n[2],0:0.5:8);
+	yticks(0:div(n[1],40):n[1],4:-0.1:0);
+	savefig("figure3.png")
 	
-	# matshow(abs(T2 - T_exact)); colorbar();
-	# xlabel("y");
-	# ylabel("x");
-	# xticks(0:div(n[2],8):n[2],0:1:8);
-	# yticks(0:div(n[1],4):n[1],0:1:4);
-# end
-
-# if length(n)==2
-	# figure()
-	# contour(T_exact[end:-1:1,:],100,linestyles = "-",colors = "black",linewidths=2.0)
-	# contour(T1[end:-1:1,:],100,linestyles = ":",colors = "red", linewidths=2.0)
-	# contour(T2[end:-1:1,:],100,linestyles = "--",colors = "blue", linewidths=2.0)
-	# xlabel("y");
-	# ylabel("x");
-	# xticks(0:div(n[2],16):n[2],0:0.5:8);
-	# yticks(0:div(n[1],40):n[1],4:-0.1:0);
-
-	
-# end
-
+end
 
 return;
 end
