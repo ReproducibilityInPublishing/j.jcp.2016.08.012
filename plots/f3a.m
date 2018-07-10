@@ -37,10 +37,16 @@ Y=[1:8]
 res
 %surf(x,y,res)
 
-%random online example
-x=1:0.1:4
-y=1:0.1:4
-[X,Y]=meshgrid(x,y)
-Z=sin(X).^2+cos(Y).^2
-surf(X,Y,Z)
-view(2)
+%random online example for surf
+% x=1:0.1:4
+% y=1:0.1:4
+% [X,Y]=meshgrid(x,y)
+% Z=sin(X).^2+cos(Y).^2
+% surf(X,Y,Z)
+% view(2)
+
+x = linspace(0,4);
+y = linspace(0,8);
+[X,Y] = meshgrid(x,y);
+figure
+contour(res)

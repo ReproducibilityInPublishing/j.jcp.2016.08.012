@@ -9,7 +9,7 @@ include("getAnalyticalMediums.jl");
 include("getWorkUnit.jl");
 
 function runPaperExperiments()
-numOfRefinements = 4; 
+numOfRefinements = 3; 
 
 println("******************** 2D experiments ***************************");
 
