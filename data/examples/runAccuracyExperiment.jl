@@ -1,16 +1,17 @@
-function runExperimentAndWriteResults(kappaSquared::Array{Float64},h::Array{Float64,1},src::Array{Int64,1},n::Array{Int64,1},T_exact::Array{Float64},WU::Float64 )
+function runExperimentAndWriteResults(kappaSquared::Array{Float64},h::Array{Float64,1},src::Array{Int64,1},n::Array{Int64,1},T_exact::Array{Float64},WU::Float64,tc::String )
 Omega = zeros(2*length(n));
 Omega[2:2:end] = (n-1).*h;
 Mesh = getRegularMesh(Omega,n-1);
 ##########################################################
 
 if length(n)==2
+	set_cmap("jet");
 	matshow(sqrt(kappaSquared)); colorbar();
 	xlabel("y");
 	ylabel("x");
  	xticks(0:div(n[2],8):n[2],0:1:8);
  	yticks(0:div(n[1],4):n[1],0:1:4);
-	savefig("figure.png")
+	savefig(string(tc,"_figure1.png"))
 end
 
 
@@ -68,6 +69,7 @@ ERR2 = T_exact - pEik.T1;
 
 if length(n)==2
 	figure()
+	set_cmap("jet");
 	contour(T_exact[end:-1:1,:],20,linestyles = "-",colors = "black",linewidths=1.5)
 	contour(T1[end:-1:1,:],20,linestyles = ":",colors = "red", linewidths=1.5)
 	contour(T2[end:-1:1,:],20,linestyles = "--",colors = "blue", linewidths=1.5)
@@ -87,20 +89,23 @@ if length(n)==2
 	ylabel("x");
 	xticks(0:div(n[2],8):n[2],0:1:8);
 	yticks(0:div(n[1],4):n[1],0:1:4);
-	savefig("figure2.png")
+#	savefig(string(tc,"_figure2.png"))
+
 end
 
 if length(n)==2
 	figure()
+	set_cmap("jet");
 	contour(T_exact[end:-1:1,:],100,linestyles = "-",colors = "black",linewidths=2.0)
 	contour(T1[end:-1:1,:],100,linestyles = ":",colors = "red", linewidths=2.0)
 	contour(T2[end:-1:1,:],100,linestyles = "--",colors = "blue", linewidths=2.0)
 	xlabel("y");
 	ylabel("x");
-	xticks(0:div(n[2],16):n[2],0:0.5:8);
-	yticks(0:div(n[1],40):n[1],4:-0.1:0);
-	savefig("figure3.png")
-	
+	xticks(0:div(n[2],8):n[2],0:1:8);
+ 	yticks(0:div(n[1],4):n[1],0:1:4);
+
+	savefig(string(tc,"_figure3.png"))
+
 end
 
 return;

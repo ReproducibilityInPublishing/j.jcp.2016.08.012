@@ -35,8 +35,12 @@ for k=1:numOfRefinements
 	h = (0.5^k)*h0;
 	n[1] = round(Int64,(I[1]/h[1])+1);
 	n[2] = round(Int64,(I[2]/h[2])+1);
+	tc="testcase1";
+	println("*******************************************************************************")
+	println("Testcase 1")
+    println("*******************************************************************************")
 	(kappaSquared,src,T_exact) = getAnalyticalConstGrad2D(n,h);
-	runExperimentAndWriteResults(kappaSquared,h,src,n,T_exact,WU[k]);
+	runExperimentAndWriteResults(kappaSquared,h,src,n,T_exact,WU[k],tc);
 end
 
 println("******************** Gradient Velocity ***************************");
@@ -47,8 +51,13 @@ for k=1:numOfRefinements
 	h = (0.5^k)*h0;
 	n[1] = round(Int64,(I[1]/h[1])+1);
 	n[2] = round(Int64,(I[2]/h[2])+1);
+	tc="testcase2";
+	println("*******************************************************************************")
+	println("*******************************************************************************")
+	println("Testcase 2")
+    println("*******************************************************************************")
 	(kappaSquared,src,T_exact) = getAnalyticalConstGradInv2D(n,h);
-	runExperimentAndWriteResults(kappaSquared,h,src,n,T_exact,WU[k]);
+	runExperimentAndWriteResults(kappaSquared,h,src,n,T_exact,WU[k],tc);
 end
 
 
@@ -61,8 +70,13 @@ for k=1:numOfRefinements
 	h = (0.5^k)*h0;
 	n[1] = round(Int64,(I[1]/h[1])+1);
 	n[2] = round(Int64,(I[2]/h[2])+1);
+	tc="testcase3";
+	println("*******************************************************************************")
+    println("*******************************************************************************")
+	println("Testcase 3")
+    println("*******************************************************************************")
 	(kappaSquared,src,T_exact) = getSmoothGaussianMedium(n,h);
-	runExperimentAndWriteResults(kappaSquared,h,src,n,T_exact,WU[k]);
+	runExperimentAndWriteResults(kappaSquared,h,src,n,T_exact,WU[k],tc);
 end
 
 #=println("*******************************************************************************")=#
