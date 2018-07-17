@@ -1,16 +1,18 @@
-function runExperimentAndWriteResults(kappaSquared::Array{Float64},h::Array{Float64,1},src::Array{Int64,1},n::Array{Int64,1},T_exact::Array{Float64},WU::Float64 )
+function runExperimentAndWriteResults(kappaSquared::Array{Float64},h::Array{Float64,1},src::Array{Int64,1},n::Array{Int64,1},T_exact::Array{Float64},WU::Float64,tc::String )
 Omega = zeros(2*length(n));
 Omega[2:2:end] = (n-1).*h;
 Mesh = getRegularMesh(Omega,n-1);
 ##########################################################
 
-# if length(n)==2
-	# matshow(sqrt(kappaSquared)); colorbar();
-	# xlabel("y");
-	# ylabel("x");
-	# xticks(0:div(n[2],8):n[2],0:1:8);
-	# yticks(0:div(n[1],4):n[1],0:1:4);
-# end
+if length(n)==2
+	set_cmap("jet");
+	matshow(sqrt(kappaSquared)); colorbar();
+	xlabel("y");
+	ylabel("x");
+ 	xticks(0:div(n[2],8):n[2],0:1:8);
+ 	yticks(0:div(n[1],4):n[1],0:1:4);
+	savefig(string(tc,"_figure1.png"))
+end
 
 
 pMem = getEikonalTempMemory(n);
@@ -65,43 +67,46 @@ ERR2 = T_exact - pEik.T1;
 
 @printf("[%3.2e,%3.2e]\t%3.2fs(%3.2f)\n",vecnorm(ERR2,Inf),vecnorm(ERR2,2)/sqrtN,t2,t2/WU);
 
-# if length(n)==2
-	# figure()
-	# contour(T_exact[end:-1:1,:],20,linestyles = "-",colors = "black",linewidths=1.5)
-	# contour(T1[end:-1:1,:],20,linestyles = ":",colors = "red", linewidths=1.5)
-	# contour(T2[end:-1:1,:],20,linestyles = "--",colors = "blue", linewidths=1.5)
-	# xlabel("y");
-	# ylabel("x");
-	# xticks(0:div(n[2],8):n[2],0:1:8);
-	# yticks(0:div(n[1],4):n[1],4:-1:0);
+if length(n)==2
+	figure()
+	set_cmap("jet");
+	contour(T_exact[end:-1:1,:],20,linestyles = "-",colors = "black",linewidths=1.5)
+	contour(T1[end:-1:1,:],20,linestyles = ":",colors = "red", linewidths=1.5)
+	contour(T2[end:-1:1,:],20,linestyles = "--",colors = "blue", linewidths=1.5)
+	xlabel("y");
+	ylabel("x");
+	xticks(0:div(n[2],8):n[2],0:1:8);
+	yticks(0:div(n[1],4):n[1],4:-1:0);
 
+	matshow(abs(T1 - T_exact)); colorbar();
+	xlabel("y");
+	ylabel("x");
+	xticks(0:div(n[2],8):n[2],0:1:8);
+	yticks(0:div(n[1],4):n[1],0:1:4);
 	
-	# matshow(abs(T1 - T_exact)); colorbar();
-	# xlabel("y");
-	# ylabel("x");
-	# xticks(0:div(n[2],8):n[2],0:1:8);
-	# yticks(0:div(n[1],4):n[1],0:1:4);
-	
-	# matshow(abs(T2 - T_exact)); colorbar();
-	# xlabel("y");
-	# ylabel("x");
-	# xticks(0:div(n[2],8):n[2],0:1:8);
-	# yticks(0:div(n[1],4):n[1],0:1:4);
-# end
+	matshow(abs(T2 - T_exact)); colorbar();
+	xlabel("y");
+	ylabel("x");
+	xticks(0:div(n[2],8):n[2],0:1:8);
+	yticks(0:div(n[1],4):n[1],0:1:4);
+#	savefig(string(tc,"_figure2.png"))
 
-# if length(n)==2
-	# figure()
-	# contour(T_exact[end:-1:1,:],100,linestyles = "-",colors = "black",linewidths=2.0)
-	# contour(T1[end:-1:1,:],100,linestyles = ":",colors = "red", linewidths=2.0)
-	# contour(T2[end:-1:1,:],100,linestyles = "--",colors = "blue", linewidths=2.0)
-	# xlabel("y");
-	# ylabel("x");
-	# xticks(0:div(n[2],16):n[2],0:0.5:8);
-	# yticks(0:div(n[1],40):n[1],4:-0.1:0);
+end
 
-	
-# end
+if length(n)==2
+	figure()
+	set_cmap("jet");
+	contour(T_exact[end:-1:1,:],100,linestyles = "-",colors = "black",linewidths=2.0)
+	contour(T1[end:-1:1,:],100,linestyles = ":",colors = "red", linewidths=2.0)
+	contour(T2[end:-1:1,:],100,linestyles = "--",colors = "blue", linewidths=2.0)
+	xlabel("y");
+	ylabel("x");
+	xticks(0:div(n[2],8):n[2],0:1:8);
+ 	yticks(0:div(n[1],4):n[1],0:1:4);
 
+	savefig(string(tc,"_figure3.png"))
+
+end
 
 return;
 end
