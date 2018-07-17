@@ -36,4 +36,4 @@
 ## Notes
 
 * Any output/issues with the build can be view at: `cat sing-build.output`
-* To reproduce all 6 rows, change the `numOfRefinements` to 6. It consumes a lot of memory though.
+* To reproduce all 6 rows, change the `numOfRefinements` in `/data/examples/runExperiments.jl` to 6. It consumes a lot of memory though.
