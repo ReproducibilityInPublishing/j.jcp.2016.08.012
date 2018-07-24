@@ -1,131 +1,79 @@
-
-signal (2): Interrupt
-while loading /home/adb/.julia/v0.6/KrylovMethods/src/minres.jl, in expression starting on line 58
-_ZN4llvm16NamedRegionTimerC1ENS_9StringRefES1_b at /usr/lib/julia/libLLVM-3.9.so (unknown line)
-_ZN4llvm10AsmPrinter16EmitFunctionBodyEv at /usr/lib/julia/libLLVM-3.9.so (unknown line)
-unknown function (ip: 0x7f33370b28d5)
-_ZN4llvm19MachineFunctionPass13runOnFunctionERNS_8FunctionE at /usr/lib/julia/libLLVM-3.9.so (unknown line)
-_ZN4llvm13FPPassManager13runOnFunctionERNS_8FunctionE at /usr/lib/julia/libLLVM-3.9.so (unknown line)
-_ZN4llvm13FPPassManager11runOnModuleERNS_6ModuleE at /usr/lib/julia/libLLVM-3.9.so (unknown line)
-_ZN4llvm6legacy15PassManagerImpl3runERNS_6ModuleE at /usr/lib/julia/libLLVM-3.9.so (unknown line)
-unknown function (ip: 0x7f333899395e)
-unknown function (ip: 0x7f3338999848)
-unknown function (ip: 0x7f333899a2c9)
-unknown function (ip: 0x7f3338946122)
-unknown function (ip: 0x7f3338989837)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f333283786e)
-unknown function (ip: 0x7f33388ee5a9)
-unknown function (ip: 0x7f33389bd27d)
-unknown function (ip: 0x7f33389bfb5d)
-unknown function (ip: 0x7f33389c0324)
-unknown function (ip: 0x7f33389bd27d)
-unknown function (ip: 0x7f33389bfb5d)
-unknown function (ip: 0x7f33389c0324)
-unknown function (ip: 0x7f33389bd27d)
-unknown function (ip: 0x7f33389bfb5d)
-unknown function (ip: 0x7f33389c0324)
-unknown function (ip: 0x7f33389bd27d)
-unknown function (ip: 0x7f33389bfb5d)
-unknown function (ip: 0x7f33389c0324)
-unknown function (ip: 0x7f33389bd27d)
-unknown function (ip: 0x7f33389bfb5d)
-unknown function (ip: 0x7f33389c0324)
-unknown function (ip: 0x7f33389bd27d)
-unknown function (ip: 0x7f33389bfb5d)
-unknown function (ip: 0x7f33389c0324)
-unknown function (ip: 0x7f33389bd27d)
-unknown function (ip: 0x7f33389bfb5d)
-unknown function (ip: 0x7f33389c0324)
-unknown function (ip: 0x7f33389bd27d)
-unknown function (ip: 0x7f33389c0681)
-unknown function (ip: 0x7f33389bd7b7)
-unknown function (ip: 0x7f33389bfb5d)
-unknown function (ip: 0x7f33389bfd8b)
-unknown function (ip: 0x7f33388ef4e3)
-jl_load at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33328d6a95)
-unknown function (ip: 0x7f33328d6c6b)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f333276c7bf)
-unknown function (ip: 0x7f333276c82b)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33388fa207)
-unknown function (ip: 0x7f33388f912e)
-unknown function (ip: 0x7f33388fa134)
-unknown function (ip: 0x7f3338911028)
-unknown function (ip: 0x7f33389117a7)
-unknown function (ip: 0x7f3338910d74)
-unknown function (ip: 0x7f33388ef46d)
-jl_load at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33328d6a95)
-unknown function (ip: 0x7f33328d6c6b)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33388fa207)
-unknown function (ip: 0x7f33388f912e)
-unknown function (ip: 0x7f33388fa134)
-unknown function (ip: 0x7f3338911028)
-jl_toplevel_eval_in at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f3332893649)
-unknown function (ip: 0x7f333289365f)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33329bcc22)
-unknown function (ip: 0x7f33329bd091)
-unknown function (ip: 0x7f33329bd15b)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33389102bb)
-unknown function (ip: 0x7f3338910e12)
-unknown function (ip: 0x7f33389117a7)
-unknown function (ip: 0x7f3338910d74)
-unknown function (ip: 0x7f33388ef46d)
-jl_load at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33328d6a95)
-unknown function (ip: 0x7f33328d6c6b)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f333276c7bf)
-unknown function (ip: 0x7f333276c82b)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33388fa207)
-unknown function (ip: 0x7f33388f912e)
-unknown function (ip: 0x7f33388fa134)
-unknown function (ip: 0x7f3338911028)
-unknown function (ip: 0x7f33389117a7)
-unknown function (ip: 0x7f3338910d74)
-unknown function (ip: 0x7f33388ef46d)
-jl_load at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33328d6a95)
-unknown function (ip: 0x7f33328d6c6b)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33388fa207)
-unknown function (ip: 0x7f33388f912e)
-unknown function (ip: 0x7f33388fa134)
-unknown function (ip: 0x7f3338911028)
-jl_toplevel_eval_in at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f3332893649)
-unknown function (ip: 0x7f333289365f)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33329bcc22)
-unknown function (ip: 0x7f33329bd091)
-unknown function (ip: 0x7f33329bd15b)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33389102bb)
-unknown function (ip: 0x7f3338910e12)
-unknown function (ip: 0x7f3338911234)
-unknown function (ip: 0x7f33388ef46d)
-jl_load at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33328d6a95)
-unknown function (ip: 0x7f33328d6c6b)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f333276c7bf)
-unknown function (ip: 0x7f333276c82b)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x7f33328e2336)
-unknown function (ip: 0x7f33328e46b4)
-unknown function (ip: 0x7f33328e5138)
-jl_apply_generic at /usr/lib/libjulia.so.0.6 (unknown line)
-unknown function (ip: 0x55eb059c39a3)
-unknown function (ip: 0x55eb059c3395)
-__libc_start_main at /usr/lib/libc.so.6 (unknown line)
-unknown function (ip: 0x55eb059c3449)
-unknown function (ip: 0xffffffffffffffff)
-Allocations: 1432381 (Pool: 1431222; Big: 1159); GC: 0
+******************** 2D experiments ***************************
+workunit is: 0.00022052769999999998 for n = [161, 321]
+workunit is: 0.0008035242 for n = [321, 641]
+workunit is: 0.00330553195 for n = [641, 1281]
+workunit is: 0.013104778850000002 for n = [1281, 2561]
+******************** Gradient Slowness ***************************
+h		n		error(1st)[max,l2]	time(1st)	error(2nd)[max,l2]	time(2nd)
+*******************************************************************************
+Testcase 1
+*******************************************************************************
+Timing is based on averaged 20 runs.
+[0.0250,0.0250]	[161,321]	[3.71e-03,9.42e-04]	0.04s(191.29)	[9.33e-05,9.26e-06]	0.04s(164.59)
+*******************************************************************************
+Testcase 1
+*******************************************************************************
+Timing is based on averaged 5 runs.
+[0.0125,0.0125]	[321,641]	[1.85e-03,4.69e-04]	0.15s(185.79)	[3.30e-05,2.21e-06]	0.16s(193.82)
+*******************************************************************************
+Testcase 1
+*******************************************************************************
+Timing is based on averaged 2 runs.
+[0.0063,0.0063]	[641,1281]	[9.22e-04,2.34e-04]	0.71s(215.29)	[1.14e-05,5.32e-07]	0.71s(214.60)
+*******************************************************************************
+Testcase 1
+*******************************************************************************
+Timing is based on averaged 1 runs.
+[0.0031,0.0031]	[1281,2561]	[4.60e-04,1.17e-04]	3.09s(235.97)	[4.06e-06,1.28e-07]	3.24s(247.05)
+******************** Gradient Velocity ***************************
+h		n		error(1st)[max,l2]	time(1st)	error(2nd)[max,l2]	time(2nd)
+*******************************************************************************
+*******************************************************************************
+Testcase 2
+*******************************************************************************
+Timing is based on averaged 20 runs.
+[0.0250,0.0250]	[161,321]	[2.66e-02,1.01e-02]	0.04s(159.29)	[4.86e-04,2.90e-04]	0.04s(168.51)
+*******************************************************************************
+*******************************************************************************
+Testcase 2
+*******************************************************************************
+Timing is based on averaged 5 runs.
+[0.0125,0.0125]	[321,641]	[1.32e-02,5.05e-03]	0.15s(186.80)	[1.67e-04,7.38e-05]	0.15s(192.82)
+*******************************************************************************
+*******************************************************************************
+Testcase 2
+*******************************************************************************
+Timing is based on averaged 2 runs.
+[0.0063,0.0063]	[641,1281]	[6.59e-03,2.52e-03]	0.83s(251.02)	[5.18e-05,1.85e-05]	0.71s(213.30)
+*******************************************************************************
+*******************************************************************************
+Testcase 2
+*******************************************************************************
+Timing is based on averaged 1 runs.
+[0.0031,0.0031]	[1281,2561]	[3.29e-03,1.26e-03]	3.07s(234.35)	[1.90e-05,4.61e-06]	3.32s(253.41)
+******************** Gaussian factor ***************************
+h		n		error(1st)[max,l2]	time(1st)	error(2nd)[max,l2]	time(2nd)
+*******************************************************************************
+*******************************************************************************
+Testcase 3
+*******************************************************************************
+Timing is based on averaged 20 runs.
+[0.0250,0.0250]	[161,321]	[6.15e-03,3.86e-03]	0.04s(161.90)	[1.60e-04,5.94e-05]	0.04s(163.16)
+*******************************************************************************
+*******************************************************************************
+Testcase 3
+*******************************************************************************
+Timing is based on averaged 5 runs.
+[0.0125,0.0125]	[321,641]	[3.07e-03,1.93e-03]	0.15s(182.47)	[3.85e-05,1.56e-05]	0.15s(191.81)
+*******************************************************************************
+*******************************************************************************
+Testcase 3
+*******************************************************************************
+Timing is based on averaged 2 runs.
+[0.0063,0.0063]	[641,1281]	[1.54e-03,9.67e-04]	0.66s(199.74)	[1.08e-05,4.03e-06]	0.72s(217.98)
+*******************************************************************************
+*******************************************************************************
+Testcase 3
+*******************************************************************************
+Timing is based on averaged 1 runs.
+[0.0031,0.0031]	[1281,2561]	[7.68e-04,4.83e-04]	3.03s(231.17)	[3.18e-06,1.04e-06]	3.19s(243.16)
