@@ -96,9 +96,9 @@ end
 if length(n)==2
 	figure()
 	set_cmap("jet");
-	contour(T_exact[end:-1:1,:],100,linestyles = "-",colors = "black",linewidths=2.0)
-	contour(T1[end:-1:1,:],100,linestyles = ":",colors = "red", linewidths=2.0)
-	contour(T2[end:-1:1,:],100,linestyles = "--",colors = "blue", linewidths=2.0)
+	contour(T_exact[end:-1:1,:],20,linestyles = "-",colors = "black",linewidths=2.0)
+	contour(T1[end:-1:1,:],20,linestyles = ":",colors = "red", linewidths=2.0)
+	contour(T2[end:-1:1,:],20,linestyles = "--",colors = "blue", linewidths=2.0)
 	xlabel("y");
 	ylabel("x");
 	xticks(0:div(n[2],8):n[2],0:1:8);

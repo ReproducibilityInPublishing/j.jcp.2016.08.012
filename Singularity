@@ -21,12 +21,12 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	export PATH="/usr/local/julia/bin:$PATH"
     julia -e 'Pkg.init()'
 
-	 mkdir -p /usr/local/venv-python
-	 virtualenv --no-site-packages /usr/local/venv-python/forjulia
-	 pip install matplotlib
-	 julia /usr/local/data/examples/runfirst.jl
-     julia -e 'Pkg.build("PyCall")'
-     julia /usr/local/data/examples/runExperiments.jl | tee /usr/local/data/results.txt
+	mkdir -p /usr/local/venv-python
+	virtualenv --no-site-packages /usr/local/venv-python/forjulia
+	pip install matplotlib
+	julia /usr/local/data/examples/runfirst.jl
+    julia -e 'Pkg.build("PyCall")'
+    julia /usr/local/data/examples/runExperiments.jl | tee /usr/local/data/results.txt
 %files
     ./data /usr/local/
 %environment
