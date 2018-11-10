@@ -20,5 +20,7 @@ install:
         - echo "export PATH=\"\$\(pwd\)/julia/bin:\$\{PATH\}\"" > ./environment.sh
 
 script:
+        - cat ./environment.sh
         - source ./environment.sh
+        - echo ${PATH}
         - julia ./data/test/runtests.jl
