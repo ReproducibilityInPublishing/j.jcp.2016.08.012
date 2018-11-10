@@ -17,7 +17,7 @@ install:
         - mkdir julia
         - tar -zxf julia-0.6.3-linux-x86_64.tar.gz -C julia --strip-components 1
         - echo '("JULIA_LOAD_CACHE_PATH" in keys(ENV)) && unshift!(Base.LOAD_CACHE_PATH, ENV["JULIA_LOAD_CACHE_PATH"])' >> ./julia/etc/julia/juliarc.jl
-        - echo "export PATH=\"\$\(pwd\)/julia/bin:\$\{PATH\}\"" > ./environment.sh
+        - echo "export PATH=\"\$(pwd)/julia/bin:\${PATH}\"" > ./environment.sh
 
 script:
         - cat ./environment.sh
