@@ -1,3 +1,7 @@
 Adding Travis.
 
 00:00:00: Starting adding travis.
+00:28:00: Basic travis file complete, Now verifying that the test suite is running.
+00:30:00: Basic test suite now running.
+
+Reset Timer!
