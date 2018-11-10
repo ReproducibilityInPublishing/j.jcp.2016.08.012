@@ -20,6 +20,5 @@ install:
         - echo "export PATH=\"\$(pwd)/julia/bin:\${PATH}\"" > ./environment.sh
 
 script:
-        - source ./environment.sh
-        - julia ./data/examples/runfirst.jl
-        - julia ./run_test.jl
+        - ./julia/bin/julia ./data/examples/runfirst.jl
+        - ./julia/bin/julia ./run_test.jl
