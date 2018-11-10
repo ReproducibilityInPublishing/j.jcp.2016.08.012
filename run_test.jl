@@ -1,0 +1,1 @@
+Pkg.test("FactoredEikonalFastMarching")
