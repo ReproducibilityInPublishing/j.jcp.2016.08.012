@@ -1,0 +1,24 @@
+sudo: true
+
+dist: xenial
+
+before_install:
+        - sudo apt-get -y update
+        - sudo apt-get -y install build-essential
+        - sudo apt-get -y install cmake
+        - sudo apt-get -y install python
+        - sudo apt-get -y install python-pip
+        - sudo apt-get -y install wget
+        - sudo pip install --upgrade pip
+        - sudo pip install matplotlib
+
+install:
+        - wget -q --no-check-certificate https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.3-linux-x86_64.tar.gz
+        - mkdir julia
+        - tar -zxf julia-0.6.3-linux-x86_64.tar.gz -C julia --strip-components 1
+        - echo '("JULIA_LOAD_CACHE_PATH" in keys(ENV)) && unshift!(Base.LOAD_CACHE_PATH, ENV["JULIA_LOAD_CACHE_PATH"])' >> ./julia/etc/julia/juliarc.jl
+        - echo "export PATH=\"\$\(pwd\)/julia/bin:\$\{PATH\}\"" > ./environment.sh
+
+script:
+        - source ./environment.sh
+        - julia ./data/test/runtests.jl
