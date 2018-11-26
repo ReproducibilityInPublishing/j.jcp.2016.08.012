@@ -1,11 +1,11 @@
-FROM blitznote/debase:16.04
+FROM ubuntu:16.04
 
 WORKDIR /app
 ADD . /app
 
 RUN \
   apt-get update \
-  && apt-get install -y build-essential cmake python python-pip wget nano
+  && apt-get install -y build-essential cmake python python-pip wget vim
 
 RUN pip install --upgrade pip
 RUN pip install matplotlib
