@@ -1,3 +1,3 @@
 #!/bin/bash
-exec ./julia/bin/julia data/examples/runfirst.jl
-exec ./julia/bin/julia data/examples/runExperiments.jl | tee results.txt
+./julia/bin/julia data/examples/runfirst.jl
+./julia/bin/julia data/examples/runExperiments.jl | tee results.txt
