@@ -8,4 +8,4 @@ set -e
 ./julia/bin/julia data/examples/runExperiments.jl | tee results.txt
 
 # Check the extracted error results from table
-./check.sh
+bash check.sh
