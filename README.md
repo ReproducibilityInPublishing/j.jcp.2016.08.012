@@ -1,8 +1,33 @@
-# Julia article containerized with Docker and Singularity
+# A fast marching algorithm for the factored eikonal equation
 
-## Docker
+["A fast marching algorithm for the factored eikonal
+equation"](https://dx.doi.org/10.1016/j.jcp.2016.08.012) discusses an algorithm
+for solving the factored eikonal equation. Practically this can be used to
+perform a kind of slowness tomography whereby travel times from some source
+within a material can be used to determine the slowness of an object with
+respect to position throughout the object.
 
-### From docker hub without cloning this repo:
+## Build Instructions
+
+To run the software in this package, all you need is an appropriate Julia installation.
+
+### Requirements
+
+The following is required to run this software:
+
+* Julia 0.6.3
+
+We have tested that the software works with this version of Julia, but other versions may work as well.
+
+### Building with docker
+
+The Dockerfile handles installation of all necessary dependencies. Simply execute the following:
+
+    docker build -t ${DOCKER_IMAGE_NAME} .
+
+### Running with docker
+
+    docker run -it --rm -v $(pwd):/Scratch ${DOCKER_IMAGE_NAME}
 
 1) `docker run -it adb16x/julia_test:fresh`
 
