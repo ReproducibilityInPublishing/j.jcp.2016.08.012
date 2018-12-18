@@ -11,5 +11,5 @@ Scripts to run are `data/examples/runfirst.jl` and `data/examples/runExperiments
 ## Visualization
 
 Figures are computed as a part of running `runExperiments.jl`. The script
-itself calls `runAccuractyExperiment.jl`, which generates figures as part of
+itself calls `data/examples/runAccuracyExperiment.jl`, which generates figures as part of
 its functionality.
