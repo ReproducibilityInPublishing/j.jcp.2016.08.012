@@ -58,6 +58,18 @@ The extracted values from the output (extracted using
 `expected_extracted_results.txt`.  Note that `computation.sh` already includes
 the checking step.
 
+#### Running Visualization Scripts
+The same script for computation also creates the images. The images are
+
+    testcase1_figure1.png
+    testcase1_figure3.png
+    testcase2_figure1.png
+    testcase2_figure3.png
+    testcase3_figure1.png
+    testcase3_figure3.png
+
+The expected images are found under `expected_figures/`.
+
 ### Notes about Running All Rows
 * To reproduce all 6 rows from the article, change the `numOfRefinements` in `data/examples/runExperiments.jl` to 6. It consumes a lot of memory, though.
 
