@@ -58,8 +58,8 @@ The extracted values from the output (extracted using
 `expected_extracted_results.txt`.  Note that `computation.sh` already includes
 the checking step.
 
-### Running Notes
-* To reproduce all 6 rows, change the `numOfRefinements` in `data/examples/runExperiments.jl` to 6. It consumes a lot of memory, though.
+### Notes about Running All Rows
+* To reproduce all 6 rows from the article, change the `numOfRefinements` in `data/examples/runExperiments.jl` to 6. It consumes a lot of memory, though.
 
 ## Reproduction Notes
 We kept track of our progress and issues inside `notes.txt`. We also have an
