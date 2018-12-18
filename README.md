@@ -2,7 +2,7 @@
 
 ["A fast marching algorithm for the factored eikonal
 equation"](https://dx.doi.org/10.1016/j.jcp.2016.08.012) discusses an algorithm
-for solving the factored eikonal equation. Practically this can be used to
+for solving the factored eikonal equation. Practically, this can be used to
 perform a kind of slowness tomography whereby travel times from some source
 within a material can be used to determine the slowness of an object with
 respect to position throughout the object.
@@ -19,46 +19,53 @@ The following is required to run this software:
 
 We have tested that the software works with this version of Julia, but other versions may work as well.
 
-### Building with docker
+Instructions were also tested using Docker version 18.06.0-ce, build 0ffa825, on Ubuntu 16.04.5 LTS.
 
+### Building with Docker
 The Dockerfile handles installation of all necessary dependencies. Simply execute the following:
 
     docker build -t ${DOCKER_IMAGE_NAME} .
 
-### Running with docker
+## Run Instructions
+
+### Running with Docker
+To start a container for the Docker image:
 
     docker run -it --rm -v $(pwd):/Scratch ${DOCKER_IMAGE_NAME}
 
-1) `docker run -it adb16x/julia_test:fresh`
+#### Run Everything
+To run everything, computational scripts for experiments and visualization scripts, run
 
-2) When inside the container:
-	`sh run.sh`
+	./run.sh
 
-3) The output is stored in `results.txt`
+Please be aware of computational efforts for the scripts. More details can be found [here](COMPUTATIONAL_EFFORTS.md).
 
-### By cloning this repo:
+See sections below provide for details about the individual steps.
 
-1) `docker build --no-cache -t julia .`
+#### Running Computational Scripts
+Within the Docker container, run
 
-2) `docker run -it julia`
+    ./computation.sh
 
-3) When inside the container:
-	`sh run.sh`
+Output will be written to `results.txt`. 
 
-4) The output is stored in `results.txt`
+Expected output is found in `expected_results.txt`. The relevant parts from the output can be extracted and compared against the expected output using
 
-## Singularity
+    ./check.sh
 
-1) Build image **and** run the code:
-	`sudo singularity --debug build test.simg Singularity |& tee sing-build.output`
+The extracted values from the output (extracted using
+`data/examples/extract_results.py`) can be found in
+`expected_extracted_results.txt`.  Note that `computation.sh` already includes
+the checking step.
 
-2) Go into the image:
-	`singularity shell test.simg`
+### Running Notes
+* To reproduce all 6 rows, change the `numOfRefinements` in `data/examples/runExperiments.jl` to 6. It consumes a lot of memory, though.
 
-3) View the results:
-	`cat /usr/local/data/results.txt`
+## Reproduction Notes
+We kept track of our progress and issues inside `notes.txt`. We also have an
+jupyter notebook showing this progress over time `ReproducibilityPlot.ipynb`.
 
-## Notes
-
-* Any output/issues with the build can be view at: `cat sing-build.output`
-* To reproduce all 6 rows, change the `numOfRefinements` in `/data/examples/runExperiments.jl` to 6. It consumes a lot of memory though.
+## Acknowledgements
+We want acknowledge the authors for their fine work on this experiment. We
+succeeded with this project where many others had failed. The authors should be
+commended on putting together high quality work.
