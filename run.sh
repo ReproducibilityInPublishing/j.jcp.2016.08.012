@@ -4,8 +4,5 @@ set -e
 # Simple run to make sure does not crash
 ./julia/bin/julia data/examples/runfirst.jl
 
-# Run experiments to check output
-./julia/bin/julia data/examples/runExperiments.jl | tee results.txt
-
-# Check the extracted error results from table
-bash check.sh
+# Run experiments and check output
+./computation.sh
