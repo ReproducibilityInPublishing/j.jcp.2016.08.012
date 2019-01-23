@@ -1,35 +1,54 @@
-june-28;4:25pm;Matlab is currently packaging the binaries
-june-28;4:38pm;Done binaries starting packaging
-june-28;5:24pm;Just finished installing VMWare, Windows 10, licenses and drivers
-june-28;5:55pm;Finally got shared folders working, installed the matlab package and ran figures 2&3. Worked perfectly.
+--- Assets ---
 
-july-3;8:00am;Made main.m script, started packaging everything.
-july-3;8:28am;Tested first packages, turns out main.m didn't include the other script while packaging.
-july-3;9:21am;Included all the required files but still doesn't work for some reason. Gets stuck at the end of the first program. Doesn't move on/give the output.
-july-3;10:12am;Finished packaging and uploading.
+Figures [49] 1(F1) + 6(F3) + 2(F4) + 5*3(F5) + 5*3(F6) + 3(F7) + 4(F8) + 1(F9) + 2(F10)
+Tables [132] 24(T1) + 24(T2) + 24(T3) + 20(T4) + 20(T5) + 20(T6)
+Total [181]
 
-july-5;8:00am;Testing matlab packages with different versions
-july-5;2:00pm;Started working on Matlab to produce figure 3 of the Julia article
+--- Work Log ---
 
-july-10;8:00am;Still working on Matlab code. Reading up on possible ways to recreate plots using the matlab documentation
-july-10;12:00pm;Looks like the colored plots could be done using a heatmap
-july-10;4:00pm;Still trying to figure out what the 3rd/function variable could be in addition to the 2 axes.
-july-10;6:00pm;Found some example from their github code commit comments!!!!!! Will try on thursday
+Tables 1-6 were completed in summer 2016 hence:
+T1 (4*6)
+T2 (4*6)
+T3 (4*6)
+T4 (4*5)
+T5 (4*5)
+T6 (4*5) 
+[132(72.92%)]@00:00
 
-july-12;8:00am;Trying their sample code
-july-12;1:00pm;Been trying to modify their code in order to save all the plots after numbering and naming.
-july-12;6:00pm;Able to save all plots. Also managed to figure out the correct colorscheme and axes.
+00:00 Start work
 
-july-17;8:00am;Mainly just poster, report and presentation stuffjj
+Trying to reproduce the figures, figure 3 is the first do-able one.
 
-july-19;8:00am;Mainly just poster, report and presentation stuffjj
+00:30; Matlab is currently packaging the binaries
+00:38; Done binaries starting packaging
+01:38; Just finished installing VMWare, Windows 10, licenses and drivers
+01:55; Finally got shared folders working, installed the matlab package and ran figures 2&3. Worked perfectly.
 
-july-24;8:00am;Finishing up poster
-july-24;2:00pm;Working on the other plots for Julia
-july-24;4:00pm;Writing a python regex script that takes in result.txt and extracts all the required values for the tables
+01:18; Made main.m script, started packaging everything.
+01:28; Tested first packages, turns out main.m didn't include the other script while packaging.
+02:21; Included all the required files but still doesn't work for some reason. Gets stuck at the end of the first program. Doesn't move on/give the output.
+03:12; Finished packaging and uploading.
 
-july-26;11:00am;Python regex script
-july-26;6:00pm;Finished with all the basic stuff needed for extracting!! Great summer :)
+03:15; Testing matlab packages with different versions
+06:15; Started working on Matlab to produce figure 3 of the Julia article
+
+06:20; Still working on Matlab code. Reading up on possible ways to recreate plots using the matlab documentation
+10:20; Looks like the colored plots could be done using a heatmap
+14:20; Still trying to figure out what the 3rd/function variable could be in addition to the 2 axes.
+16:20; Found some example from their github code commit comments!!!!!! Will try on thursday
+
+16:30; Trying their sample code
+
+F3 (6) 
+[138(76.24%)]@22:30
+
+22:30; Been trying to modify their code in order to save all the plots after numbering and naming.
+27:30; Able to save all plots. Also managed to figure out the correct colorscheme and axes.
+
+28:15; Working on the other plots for Julia
+30:15; Writing a python regex script that takes in result.txt and extracts all the required values for the tables
+32:33; Python regex script
+36:00; Finished with all the basic stuff needed for extracting!
 
 ===========================================
 Adding Travis.
