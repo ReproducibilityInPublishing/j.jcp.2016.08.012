@@ -19,36 +19,22 @@ T6 (4*5)
 
 Trying to reproduce the figures, figure 3 is the first do-able one.
 
-00:30; Matlab is currently packaging the binaries
-00:38; Done binaries starting packaging
-01:38; Just finished installing VMWare, Windows 10, licenses and drivers
-01:55; Finally got shared folders working, installed the matlab package and ran figures 2&3. Worked perfectly.
+00:10; Started working on Matlab to produce figure 3 of the Julia article
 
-01:18; Made main.m script, started packaging everything.
-01:28; Tested first packages, turns out main.m didn't include the other script while packaging.
-02:21; Included all the required files but still doesn't work for some reason. Gets stuck at the end of the first program. Doesn't move on/give the output.
-03:12; Finished packaging and uploading.
+04:00; Still working on Matlab code. Reading up on possible ways to recreate plots using the matlab documentation
+04:20; Looks like the colored plots could be done using a heatmap
+08:20; Still trying to figure out what the 3rd/function variable could be in addition to the 2 axes.
+09:10; Found some example from their github code commit comments!!!!!! Will try on thursday
 
-03:15; Testing matlab packages with different versions
-06:15; Started working on Matlab to produce figure 3 of the Julia article
-
-06:20; Still working on Matlab code. Reading up on possible ways to recreate plots using the matlab documentation
-10:20; Looks like the colored plots could be done using a heatmap
-14:20; Still trying to figure out what the 3rd/function variable could be in addition to the 2 axes.
-16:20; Found some example from their github code commit comments!!!!!! Will try on thursday
-
-16:30; Trying their sample code
+10:30; Trying their sample code
 
 F3 (6) 
-[138(76.24%)]@22:30
+[138(76.24%)]@10:30
 
-22:30; Been trying to modify their code in order to save all the plots after numbering and naming.
-27:30; Able to save all plots. Also managed to figure out the correct colorscheme and axes.
+10:45; Able to save all plots. Also managed to figure out the correct colorscheme and axes.
+11:00; Working on the other plots for Julia, No further progress
 
-28:15; Working on the other plots for Julia
-30:15; Writing a python regex script that takes in result.txt and extracts all the required values for the tables
-32:33; Python regex script
-36:00; Finished with all the basic stuff needed for extracting!
+[138(76.24%)]@11:00
 
 ===========================================
 Adding Travis.
