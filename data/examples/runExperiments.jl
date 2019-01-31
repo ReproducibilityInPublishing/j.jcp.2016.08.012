@@ -8,8 +8,7 @@ include("runAccuracyExperiment.jl");
 include("getAnalyticalMediums.jl");
 include("getWorkUnit.jl");
 
-function runPaperExperiments()
-numOfRefinements = 4; 
+function runPaperExperiments(numOfRefinements::Int=4)
 
 println("******************** 2D experiments ***************************");
 
@@ -142,4 +141,4 @@ return;
 end
 ############################################################################################
 
-runPaperExperiments();
+runPaperExperiments(parse(Int,ARGS[1]));

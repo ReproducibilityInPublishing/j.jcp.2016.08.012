@@ -1,5 +1,7 @@
+import sys
+
 #for figure 5, extracting from table 1,2,3
-with open('results.txt','r') as f:
+with open('results_{}.txt'.format(sys.argv[1]),'r') as f:
     contents=f.readlines()
 
 "split contents into parts"
