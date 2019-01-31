@@ -12,7 +12,7 @@ RUN pip install matplotlib
 
 RUN cd ../opt
 RUN wget -q --no-check-certificate https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.3-linux-x86_64.tar.gz \
-  && mkdir julia \
+  && mkdir -p julia \
   && tar -zxf julia-0.6.3-linux-x86_64.tar.gz -C julia --strip-components 1 \
   && cd julia
 RUN echo '("JULIA_LOAD_CACHE_PATH" in keys(ENV)) && unshift!(Base.LOAD_CACHE_PATH, ENV["JULIA_LOAD_CACHE_PATH"])' >> /app/julia/etc/julia/juliarc.jl
