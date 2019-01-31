@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run experiments
-./julia/bin/julia data/examples/runExperiments.jl | tee results.txt
+./julia/bin/julia data/examples/runExperiments.jl $1 | tee results_$1.txt
 
 # Check the extracted error results from table
-./check.sh
+./check.sh $1

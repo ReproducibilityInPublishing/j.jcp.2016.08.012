@@ -1,4 +1,4 @@
 #!/bin/bash
 
-python data/examples/extract_results.py > extracted_results.txt
-diff expected_extracted_results.txt extracted_results.txt
+python2 data/examples/extract_results.py $1 > extracted_results_$1.txt
+diff expected_extracted_results_$1.txt extracted_results_$1.txt

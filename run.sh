@@ -5,4 +5,4 @@ set -e
 ./julia/bin/julia data/examples/runfirst.jl
 
 # Run experiments and check output
-./computation.sh
+./computation.sh $1
