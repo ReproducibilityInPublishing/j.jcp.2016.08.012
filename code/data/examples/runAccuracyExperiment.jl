@@ -6,7 +6,7 @@ Mesh = getRegularMesh(Omega,n-1);
 
 if length(n)==2
 	set_cmap("jet");
-	matshow(sqrt(kappaSquared)); colorbar();
+	matshow(sqrt.(kappaSquared)); colorbar();
 	xlabel("y");
 	ylabel("x");
  	xticks(0:div(n[2],8):n[2],0:1:8);
@@ -78,13 +78,13 @@ if length(n)==2
 	xticks(0:div(n[2],8):n[2],0:1:8);
 	yticks(0:div(n[1],4):n[1],4:-1:0);
 
-	matshow(abs(T1 - T_exact)); colorbar();
+	matshow(abs.(T1 - T_exact)); colorbar();
 	xlabel("y");
 	ylabel("x");
 	xticks(0:div(n[2],8):n[2],0:1:8);
 	yticks(0:div(n[1],4):n[1],0:1:4);
 	
-	matshow(abs(T2 - T_exact)); colorbar();
+	matshow(abs.(T2 - T_exact)); colorbar();
 	xlabel("y");
 	ylabel("x");
 	xticks(0:div(n[2],8):n[2],0:1:8);
