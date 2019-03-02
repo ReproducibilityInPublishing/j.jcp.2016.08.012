@@ -1,7 +1,7 @@
 import sys
 
 #for figure 5, extracting from table 1,2,3
-with open('results_{}.txt'.format(sys.argv[1]),'r') as f:
+with open('results_{}_{}.txt'.format(sys.argv[1], sys.argv[2]),'r') as f:
     contents=f.readlines()
 
 def main_extract(content):
