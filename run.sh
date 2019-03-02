@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-./main.sh "2" "1"
+./main.sh "2" "2"
