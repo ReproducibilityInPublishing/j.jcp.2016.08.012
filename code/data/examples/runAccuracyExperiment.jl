@@ -102,7 +102,7 @@ if length(n)==2
 	xlabel("y");
 	ylabel("x");
 	xticks(0:div(n[2],8):n[2],0:1:8);
- 	yticks(0:div(n[1],4):n[1],0:1:4);
+	yticks(0:div(n[1],4):n[1],4:-1:0);
 
 	savefig(string(tc,"_figure3.png"))
 
