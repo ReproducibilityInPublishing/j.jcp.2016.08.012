@@ -83,7 +83,7 @@ source3 = (src[3]-1)*h[3];
 
 X1,X2,X3 = ndgrid((0:(n[1]-1))*h[1] - source1,(0:(n[2]-1))*h[2] - source2,(0:(n[3]-1))*h[3] - source3);
 
-r = sqrt(X1.^2 + X2.^2 + X3.^2);
+r = sqrt.(X1.^2 + X2.^2 + X3.^2);
 T = r;
 L = 1./r;
 G2 = X2.*L;
@@ -156,7 +156,7 @@ x2_num = -h[2]/2+h[2]/(2*n_num):h[2]/n_num:h[2]/2-h[2]/(2*n_num);
 x3_num = -h[3]/2+h[3]/(2*n_num):h[3]/n_num:h[3]/2-h[3]/(2*n_num);
 
 X2sq,X3sq = ndgrid(x2_num.^2,x3_num.^2);
-F = 2.0*sum(asinh((0.5*h[1])./sqrt(X2sq+X3sq)));
+F = 2.0*sum(asinh((0.5*h[1])./sqrt.(X2sq+X3sq)));
 # F = 0.0;
 # for ii = 1:n_num
 	# for jj = 1:n_num
