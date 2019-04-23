@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 .ipynb_checkpoints
 .DS_Store
-=======
-*.DS_Store
->>>>>>> 6bd962a... Added num of 3d refinement arguments, fixed python version, fixed deprecated errors, need to add more expected outptut tables for 3d
