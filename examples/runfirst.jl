@@ -10,6 +10,5 @@ end
 println("Finished.")
 if isdir(Pkg.dir("FactoredEikonalFastMarching"))==false
   Pkg.clone("https://github.com/ReproducibilityInPublishing/j.jcp.2016.08.012","FactoredEikonalFastMarching")
-  Pkg.checkout("FactoredEikonalFastMarching", branch="julia-deprecation-fix-attempt")
 end
 #Pkg.test("FactoredEikonalFastMarching")
