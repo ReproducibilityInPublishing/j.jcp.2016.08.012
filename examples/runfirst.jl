@@ -8,7 +8,7 @@ if isdir(Pkg.dir("jInv"))==false
   Pkg.clone("https://github.com/ReproducibilityInPublishing/jInv.jl","jInv")
 end
 println("Finished.")
-#if isdir(Pkg.dir("FactoredEikonalFastMarching"))==false
-#  Pkg.clone("https://github.com/JuliaInv/FactoredEikonalFastMarching.jl","FactoredEikonalFastMarching")
-#end
+if isdir(Pkg.dir("FactoredEikonalFastMarching"))==false
+  Pkg.clone("https://github.com/ReproducibilityInPublishing/j.jcp.2016.08.012","FactoredEikonalFastMarching", branch="julia-deprecation-fix-attempt")
+end
 #Pkg.test("FactoredEikonalFastMarching")
