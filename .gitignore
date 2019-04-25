@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 .DS_Store
+extracted_results_*.txt
+results_*.txt
