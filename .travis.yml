@@ -20,4 +20,4 @@ install:
         - echo "export PATH=\"\$(pwd)/julia/bin:\${PATH}\"" > ./environment.sh
 
 script:
-        - bash run.sh 4
+        - bash run.sh 4 4
