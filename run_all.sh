@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-./main.sh $1 $2
+./main.sh "6" "6"

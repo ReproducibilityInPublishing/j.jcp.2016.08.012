@@ -8,7 +8,7 @@ include("runAccuracyExperiment.jl");
 include("getAnalyticalMediums.jl");
 include("getWorkUnit.jl");
 
-function runPaperExperiments(numOfRefinements::Int=4)
+function runPaperExperiments(numOf2DRefinements::Int=4, numOf3DRefinements::Int=4)
 
 println("******************** 2D experiments ***************************");
 
@@ -16,8 +16,8 @@ I = [4,8];
 n = zeros(Int64,2);
 
 h0 = [0.05,0.05];
-WU = zeros(numOfRefinements)
-for k = 1:numOfRefinements
+WU = zeros(numOf2DRefinements)
+for k = 1:numOf2DRefinements
 	h = (0.5^k)*h0;
 	n[1] = round(Int64,(I[1]/h[1])+1);
 	n[2] = round(Int64,(I[2]/h[2])+1);
@@ -30,7 +30,7 @@ println("h\t\tn\t\terror(1st)[max,l2]\ttime(1st)\terror(2nd)[max,l2]\ttime(2nd)"
 
 
 h0 = [0.05,0.05];
-for k=1:numOfRefinements
+for k=1:numOf2DRefinements
 	h = (0.5^k)*h0;
 	n[1] = round(Int64,(I[1]/h[1])+1);
 	n[2] = round(Int64,(I[2]/h[2])+1);
@@ -46,7 +46,7 @@ println("******************** Gradient Velocity ***************************");
 
 println("h\t\tn\t\terror(1st)[max,l2]\ttime(1st)\terror(2nd)[max,l2]\ttime(2nd)")
 h0 = [0.05,0.05];
-for k=1:numOfRefinements
+for k=1:numOf2DRefinements
 	h = (0.5^k)*h0;
 	n[1] = round(Int64,(I[1]/h[1])+1);
 	n[2] = round(Int64,(I[2]/h[2])+1);
@@ -65,7 +65,7 @@ println("******************** Gaussian factor ***************************");
 
 println("h\t\tn\t\terror(1st)[max,l2]\ttime(1st)\terror(2nd)[max,l2]\ttime(2nd)")
 h0 = [0.05,0.05];
-for k=1:numOfRefinements
+for k=1:numOf2DRefinements
 	h = (0.5^k)*h0;
 	n[1] = round(Int64,(I[1]/h[1])+1);
 	n[2] = round(Int64,(I[2]/h[2])+1);
@@ -92,11 +92,11 @@ println("***********************************************************************
 I = [1.6,1.6,0.8];
 n = zeros(Int64,3);
 
-numOfRefinements = 3;
+# numOfRefinements = 3;
 
 h0 = [0.1,0.1,0.1];
-WU = zeros(numOfRefinements)
-for k = 1:numOfRefinements
+WU = zeros(numOf3DRefinements)
+for k = 1:numOf3DRefinements
 	h = (0.5^k)*h0;
 	n[1] = round(Int64,(I[1]/h[1])+1);
 	n[2] = round(Int64,(I[2]/h[2])+1);
@@ -107,7 +107,7 @@ end
 println("******************** Gradient Slowness ***************************");
 println("h\t\tn\t\terror(1st)[max,l2]\ttime(1st)\terror(2nd)[max,l2]\ttime(2nd)")
 
-for k=1:numOfRefinements
+for k=1:numOf3DRefinements
 	h = (0.5^k)*h0;
 	n[1] = round(Int64,(I[1]/h[1])+1);
 	n[2] = round(Int64,(I[2]/h[2])+1);
@@ -123,7 +123,7 @@ end
 
 println("******************** Gradient Velocity ***************************");
 println("h\t\tn\t\terror(1st)[max,l2]\ttime(1st)\terror(2nd)[max,l2]\ttime(2nd)")
-for k=1:numOfRefinements
+for k=1:numOf3DRefinements
 	h = (0.5^k)*h0;
 	n[1] = round(Int64,(I[1]/h[1])+1);
 	n[2] = round(Int64,(I[2]/h[2])+1);
@@ -139,7 +139,7 @@ end
 
 println("******************** Gaussian factor ***************************");
 println("h\t\tn\t\terror(1st)[max,l2]\ttime(1st)\terror(2nd)[max,l2]\ttime(2nd)")
-for k=1:numOfRefinements
+for k=1:numOf3DRefinements
 	h = (0.5^k)*h0;
 	n[1] = round(Int64,(I[1]/h[1])+1);
 	n[2] = round(Int64,(I[2]/h[2])+1);
@@ -156,4 +156,4 @@ return;
 end
 ############################################################################################
 
-runPaperExperiments(parse(Int,ARGS[1]));
+runPaperExperiments(parse(Int,ARGS[1]), parse(Int,ARGS[2]));

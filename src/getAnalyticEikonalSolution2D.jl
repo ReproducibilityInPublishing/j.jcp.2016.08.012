@@ -72,7 +72,7 @@ source2 = (src[2]-1)*h[2];
 
 X1,X2 = ndgrid((0:(n[1]-1))*h[1] - source1,(0:(n[2]-1))*h[2] - source2);
 
-r = sqrt(X1.^2 + X2.^2);
+r = sqrt.(X1.^2 + X2.^2);
 T = r;
 L = 1./r;
 #Check that for h1=h2:
