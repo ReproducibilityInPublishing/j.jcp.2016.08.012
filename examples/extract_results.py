@@ -1,4 +1,5 @@
 import sys
+import csv
 
 #for figure 5, extracting from table 1,2,3
 with open('results_{}_{}.txt'.format(sys.argv[1], sys.argv[2]),'r') as f:
@@ -19,22 +20,24 @@ def main_extract(content):
     #to get the lines with data
     indices = [i+1 for i in indices]
 
+    results = []
+
     for i in indices:
         #extracting linfinity and l2 errors for first and second orders
         string=contents[i]
         firstOrder=string.split('[',3)[3].split(']')[0]
-        firstLinf=firstOrder.split(',')[0]
-        firstL2=firstOrder.split(',')[1]
+        firstLinf=float(firstOrder.split(',')[0])
+        firstL2=float(firstOrder.split(',')[1])
 
         secondOrder=string.split('[',3)[3].split(']')[1].split('[')[1]
-        secondLinf=secondOrder.split(',')[0]
-        secondL2=secondOrder.split(',')[1]
+        secondLinf=float(secondOrder.split(',')[0])
+        secondL2=float(secondOrder.split(',')[1])
 
-        print(firstLinf,firstL2,secondLinf,secondL2)
+        results.append(["{0:0.2e}".format(i) for i in [firstLinf,firstL2,secondLinf,secondL2]])
+    return results
 
-
-start_3d_index = contents.index("************************* 3-D EXPERIMENTS *************************************\n")
-contents3d=contents[start_3d_index:]
-
-main_extract(contents)
-# main_extract(contents3d)
+results = main_extract(contents)
+with open('extracted_results_{}_{}.csv'.format(sys.argv[1], sys.argv[2]), 'w') as out:
+    results_writer = csv.writer(out, delimiter=',', quotechar='"')
+    for row in results:
+        results_writer.writerow(row)
