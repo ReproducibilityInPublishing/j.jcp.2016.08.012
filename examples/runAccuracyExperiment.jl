@@ -63,9 +63,15 @@ function runExperimentAndWriteResults(kappaSquared::Array{Float64},h::Array{Floa
 
 	ERR2 = T_exact - pEik.T1;
 
-	@printf("[%3.4f,%3.4f]\t[%d,%d]\t[%3.2e,%3.2e]\t%3.2fs(%3.2f)\t",h[1],h[2],n[1],n[2],vecnorm(ERR1,Inf),vecnorm(ERR1,2)/sqrtN,t1,t1/WU);
+    if length(n)==2
+	    @printf("[%3.4f,%3.4f]\t[%d,%d]\t[%3.2e,%3.2e]\t%3.2fs(%3.2f)\t",h[1],h[2],n[1],n[2],vecnorm(ERR1,Inf),vecnorm(ERR1,2)/sqrtN,t1,t1/WU);
 
-	@printf("[%3.2e,%3.2e]\t%3.2fs(%3.2f)\n",vecnorm(ERR2,Inf),vecnorm(ERR2,2)/sqrtN,t2,t2/WU);
+	    @printf("[%3.2e,%3.2e]\t%3.2fs(%3.2f)\n",vecnorm(ERR2,Inf),vecnorm(ERR2,2)/sqrtN,t2,t2/WU);
+    elseif length(n)==3
+	    @printf("[%3.4f,%3.4f,%3.4f]\t[%d,%d,%d]\t[%3.2e,%3.2e]\t%3.2fs(%3.2f)\t",h[1],h[2],h[3],n[1],n[2],n[3],vecnorm(ERR1,Inf),vecnorm(ERR1,2)/sqrtN,t1,t1/WU);
+
+	    @printf("[%3.2e,%3.2e]\t%3.2fs(%3.2f)\n",vecnorm(ERR2,Inf),vecnorm(ERR2,2)/sqrtN,t2,t2/WU);
+    end
 
 	if length(n)==2
 		figure()
