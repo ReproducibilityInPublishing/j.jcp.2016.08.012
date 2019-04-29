@@ -19,5 +19,15 @@ install:
         - echo '("JULIA_LOAD_CACHE_PATH" in keys(ENV)) && unshift!(Base.LOAD_CACHE_PATH, ENV["JULIA_LOAD_CACHE_PATH"])' >> ./julia/etc/julia/juliarc.jl
         - echo "export PATH=\"\$(pwd)/julia/bin:\${PATH}\"" > ./environment.sh
 
-script:
-        - bash run.sh 3 3
+jobs:
+  include:
+    - stage: smoke-tests
+      name: "Smoke Tests"
+      script: bash run.sh 2 2
+    - stage: main-tests
+      name: "Main Tests"
+      script: bash run.sh 4 3
+
+stages:
+  - smoke-tests
+  - main-tests
