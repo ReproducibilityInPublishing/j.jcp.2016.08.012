@@ -26,7 +26,7 @@ jobs:
       script: bash run.sh 2 2
     - stage: main-tests
       name: "Main Tests"
-      script: bash run.sh 5 3
+      script: bash run.sh 4 3
 
 stages:
   - smoke-tests
