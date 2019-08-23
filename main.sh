@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+echo -e "\033[96mInitializing environment...\033[39m"
+
 # Simple run to make sure does not crash
 case "$OSTYPE" in
 	linux*) ./julia/bin/julia examples/runfirst.jl ;;

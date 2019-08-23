@@ -9,9 +9,10 @@ function runExperimentAndWriteResults(kappaSquared::Array{Float64},h::Array{Floa
 		matshow(sqrt.(kappaSquared)); colorbar();
 		xlabel("y");
 		ylabel("x");
-		 xticks(0:div(n[2],8):n[2],0:1:8);
-		 yticks(0:div(n[1],4):n[1],0:1:4);
-		savefig(string(tc,"_figure1.png"))
+		xticks(0:div(n[2],8):n[2],0:1:8);
+		yticks(0:div(n[1],4):n[1],0:1:4);
+		savefig(string("figures/",tc,"_figure1.png"))
+        close()
 	end
 
 
@@ -95,8 +96,8 @@ function runExperimentAndWriteResults(kappaSquared::Array{Float64},h::Array{Floa
 		ylabel("x");
 		xticks(0:div(n[2],8):n[2],0:1:8);
 		yticks(0:div(n[1],4):n[1],0:1:4);
-	#	savefig(string(tc,"_figure2.png"))
-
+	#	savefig(string("figures/",tc,"_figure2.png"))
+        close()
 	end
 
 	if length(n)==2
@@ -109,8 +110,8 @@ function runExperimentAndWriteResults(kappaSquared::Array{Float64},h::Array{Floa
 		ylabel("x");
 		xticks(0:div(n[2],8):n[2],0:1:8);
 		yticks(0:div(n[1],4):n[1],4:-1:0);
-		savefig(string(tc,"_figure3.png"))
-
+		savefig(string("figures/",tc,"_figure3.png"))
+        close()
 	end
 
 	return;
