@@ -1,0 +1,16 @@
+Usage ./algo.sh [command] <options>
+
+COMMAND     DESC                                ARGS
+
+help        print this info                     none
+
+init        initilize the Julia environment     none
+
+run         run the experiments                 num 2d refinements,
+                                                num 3d refinements
+
+check       compare experiment results with     num 2d refinements,
+            the results in the paper            num 3d refinements
+
+all         runs init, run, then check          num 2d refinements,
+                                                num 3d refinements
