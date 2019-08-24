@@ -25,4 +25,4 @@ if [ ! -f $juliaBin ]; then
     exit 1
 fi
 
-$juliaBin ../examples/runfirst.jl
+$juliaBin ./examples/runfirst.jl
