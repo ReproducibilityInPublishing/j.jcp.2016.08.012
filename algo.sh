@@ -7,7 +7,7 @@ function ctrl_c() {
     exit 1
 }
 
-PROJ_PATH=$(dirname $(realpath -s $0))
+export PROJ_PATH=$(dirname $(realpath -s $0))
 
 if [ $# -eq 0 ]; then
     cat $PROJ_PATH/script/help.txt

@@ -6,8 +6,6 @@ echo "Number of 3D refinements: $2"
 
 juliaBin=""
 
-PROJ_PATH=$(realpath -s $(dirname $(realpath -s $0))/..)
-
 # Run experiments\
 case "$OSTYPE" in
 linux*)

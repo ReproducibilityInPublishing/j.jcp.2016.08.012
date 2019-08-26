@@ -1,7 +1,5 @@
 #!/bin/bash
 
-PROJ_PATH=$(realpath -s $(dirname $(realpath -s $0))/..)
-
 if [ ! -f $PROJ_PATH/results/results_$1_$2.txt ]; then
     echo -e "\033[31m\033[1mERROR:\033[0m\033[31m Results file does not exist\033[0m"
     echo -e "\033[93m\033[4mNote\033[24m: Run './algo.sh run <arg1> <arg2>' first\033[39m"
