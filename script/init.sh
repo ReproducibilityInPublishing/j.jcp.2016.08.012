@@ -27,4 +27,17 @@ if [ ! -f $juliaBin ]; then
     exit 1
 fi
 
+echo -e -n "\033[2m"
+
 $juliaBin $PROJ_PATH/examples/runfirst.jl
+
+retval=$?
+
+echo -e -n "\033[0m"
+
+echo "Julia script exit status: $retval"
+
+if [ $retval -ne 0 ]; then
+    echo -e "\033[31m\033[1mERROR:\033[0m\033[31m Initialization failed. Aborting...\033[0m"
+    exit 1
+fi
