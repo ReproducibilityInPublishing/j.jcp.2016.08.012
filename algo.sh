@@ -7,19 +7,20 @@ function ctrl_c() {
     exit 1
 }
 
+PROJ_PATH=$(dirname $(realpath -s $0))
 
 if [ $# -eq 0 ]; then
-    cat ./script/help.txt
+    cat $PROJ_PATH/script/help.txt
 fi
 
 command=$(echo "$1" | tr '[:upper:]' '[:lower:]')
 
 if [ "$command" = "help" ]; then
-    cat ./script/help.txt
+    cat $PROJ_PATH/script/help.txt
 fi
 
 if [ "$command" = "init" ]; then
-    ./script/init.sh
+    $PROJ_PATH/script/init.sh
 fi
 
 if [ "$command" = "run" ]; then
@@ -30,7 +31,7 @@ if [ "$command" = "run" ]; then
     fi
     arg1=$2
     arg2=$3
-    ./script/computation.sh $arg1 $arg2
+    $PROJ_PATH/script/computation.sh $arg1 $arg2
 fi
 
 if [ "$command" = "check" ]; then
@@ -41,7 +42,7 @@ if [ "$command" = "check" ]; then
     fi
     arg1=$2
     arg2=$3
-    ./script/check.sh $arg1 $arg2
+    $PROJ_PATH/script/check.sh $arg1 $arg2
 fi
 
 if [ "$command" = "all" ]; then
@@ -52,15 +53,15 @@ if [ "$command" = "all" ]; then
     fi
     arg1=$2
     arg2=$3
-    ./script/init.sh
+    $PROJ_PATH/script/init.sh
     if [ $? -ne 0 ]; then
         exit 1
     fi
-    ./script/computation.sh $arg1 $arg2
+    $PROJ_PATH/script/computation.sh $arg1 $arg2
     if [ $? -ne 0 ]; then
         exit 1
     fi
-    ./script/check.sh $arg1 $arg2
+    $PROJ_PATH/script/check.sh $arg1 $arg2
     if [ $? -ne 0 ]; then
         exit 1
     fi

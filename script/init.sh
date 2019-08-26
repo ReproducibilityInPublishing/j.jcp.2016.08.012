@@ -5,10 +5,12 @@ echo -e "\033[96mInitializing environment...\033[39m"
 
 juliaBin=""
 
+PROJ_PATH=$(realpath -s $(dirname $(realpath -s $0))/..)
+
 # Simple run to make sure does not crash
 case "$OSTYPE" in
 linux*)
-    juliaBin="./julia/bin/julia"
+    juliaBin="$PROJ_PATH/julia/bin/julia"
     ;;
 darwin*)
     juliaBin="/Applications/Julia-0.6.app/Contents/Resources/julia/bin/julia"
@@ -25,4 +27,4 @@ if [ ! -f $juliaBin ]; then
     exit 1
 fi
 
-$juliaBin ./examples/runfirst.jl
+$juliaBin $PROJ_PATH/examples/runfirst.jl

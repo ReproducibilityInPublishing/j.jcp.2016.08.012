@@ -6,10 +6,12 @@ echo "Number of 3D refinements: $2"
 
 juliaBin=""
 
+PROJ_PATH=$(realpath -s $(dirname $(realpath -s $0))/..)
+
 # Run experiments\
 case "$OSTYPE" in
 linux*)
-    juliaBin="./julia/bin/julia"
+    juliaBin="$PROJ_PATH/julia/bin/julia"
     ;;
 darwin*)
     juliaBin="/Applications/Julia-0.6.app/Contents/Resources/julia/bin/julia"
@@ -28,7 +30,7 @@ fi
 
 echo -e -n "\033[2m"
 
-$juliaBin ./examples/runExperiments.jl $1 $2 | tee ./results/results_$1_$2.txt
+$juliaBin $PROJ_PATH/examples/runExperiments.jl $1 $2 | tee $PROJ_PATH/results/results_$1_$2.txt
 
 retval=${PIPESTATUS[0]}
 
