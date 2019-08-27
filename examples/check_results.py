@@ -23,7 +23,7 @@ with open('expected_output/article_results.csv', 'r') as article_results_file:
 
 computed_results = []
 
-with open('extracted_results_{}_{}.csv'.format(nrows_2d, nrows_3d), 'r') as computed_results_file:
+with open('results/extracted_results_{}_{}.csv'.format(nrows_2d, nrows_3d), 'r') as computed_results_file:
     computed_results_reader = csv.reader(computed_results_file, delimiter=',', quotechar='"')
     for row in computed_results_reader:
         computed_results.append([float(row[0]),float(row[1]),float(row[2]),float(row[3])])
@@ -48,8 +48,8 @@ for i in range(3):
                 row_failed = True
                 failed = True
         if row_failed:
-            print("row {} of table {} was beyond tolerance. Expected: {}".format(j+1,i+1,get_row_string(article_row)))
-            print("                                       Computed: {}".format(get_row_string(computed_row)))
+            print("\033[31mError:\033[39m row {} of table {} was beyond tolerance.\n\tExpected: {}".format(j+1,i+1,get_row_string(article_row)))
+            print("\tComputed: {}".format(get_row_string(computed_row)))
         article_result_idx += 1
         computed_result_idx += 1
     article_result_idx += 6-nrows_2d
@@ -67,13 +67,13 @@ for i in range(3):
                 row_failed = True
                 failed = True
         if row_failed:
-            print("row {} of table {} was beyond tolerance. Expected: {}".format(j+1,i+4,get_row_string(article_row)))
-            print("                                       Computed: {}".format(get_row_string(computed_row)))
+            print("\033[31mError:\033[39m row {} of table {} was beyond tolerance.\n\tExpected: {}".format(j+1,i+4,get_row_string(article_row)))
+            print("\tComputed: {}".format(get_row_string(computed_row)))
         article_result_idx += 1
         computed_result_idx += 1
     article_result_idx += 5-nrows_3d
 
 if failed:
     sys.exit(1)
-else:
-    sys.exit(0)
+
+print('\033[92mAll results match expected values!\033[39m')

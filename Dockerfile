@@ -19,4 +19,5 @@ RUN echo '("JULIA_LOAD_CACHE_PATH" in keys(ENV)) && unshift!(Base.LOAD_CACHE_PAT
 RUN echo "PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/julia/bin\"" > /etc/environment && \
     echo "export PATH" >> /etc/environment && \
     echo "source /etc/environment" >> /root/.bashrc
+RUN chmod u+x /app/algo.sh
 ENTRYPOINT /bin/bash
