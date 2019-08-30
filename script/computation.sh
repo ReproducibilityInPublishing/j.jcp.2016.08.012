@@ -38,6 +38,6 @@ echo "Julia script exit status: $retval"
 
 if [ $retval -ne 0 ]; then
     echo -e "\033[31m\033[1mERROR:\033[0m\033[31m Experiment failed. Aborting...\033[0m"
-    echo -e "\033[93m\033[4mNote\033[24m: Make sure you 1) have run './algo.sh init' first and 2) you have allocated enough RAM for the docker container,\033[39m"
+    echo -e "\033[93m\033[4mNote\033[24m: Make sure you 1) have run './algo.sh init' first and 2) you have allocated enough RAM for the docker container\033[39m"
     exit 1
 fi
