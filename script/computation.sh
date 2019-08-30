@@ -27,6 +27,7 @@ if [ ! -f $juliaBin ]; then
 fi
 
 [ ! -d "$PROJ_PATH/results" ] && mkdir $PROJ_PATH/results
+[ ! -d "$PROJ_PATH/figures" ] && mkdir $PROJ_PATH/figures
 
 echo -e -n "\033[2m"
 
