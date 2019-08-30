@@ -21,13 +21,11 @@ install:
 
 jobs:
   include:
-    - stage: smoke-tests
+    - stage: tests
       name: "Smoke Tests"
-      script: bash run.sh 2 2
-    - stage: main-tests
+      script: bash algo.sh all 2 2
       name: "Main Tests"
-      script: bash run.sh 4 3
+      script: bash algo.sh all 4 3
 
 stages:
-  - smoke-tests
-  - main-tests
+  - tests
