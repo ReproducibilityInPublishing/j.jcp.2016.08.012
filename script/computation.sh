@@ -26,6 +26,8 @@ if [ ! -f $juliaBin ]; then
     exit 1
 fi
 
+[ ! -d "$PROJ_PATH/results" ] && mkdir $PROJ_PATH/results
+
 echo -e -n "\033[2m"
 
 $juliaBin $PROJ_PATH/examples/runExperiments.jl $1 $2 | tee $PROJ_PATH/results/results_$1_$2.txt
