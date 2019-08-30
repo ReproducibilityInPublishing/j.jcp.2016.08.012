@@ -24,6 +24,7 @@ jobs:
     - stage: tests
       name: "Smoke Tests"
       script: bash algo.sh all 2 2
+    -
       name: "Main Tests"
       script: bash algo.sh all 4 3
 
