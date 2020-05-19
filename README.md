@@ -1,5 +1,11 @@
 # A Fast Marching Algorithm for the Factored Eikonal Equation
 
+This is a Reproduction Package as described in the manuscript "Three Empirical Principles
+for Computational Reproducibility and their Implementation: *The Reproduction Package*"
+by M. S. Krafczyk, A. Shi, A. Bhaskar, D. Marinov, & V. Stodden.
+
+This Reproduction Package includes the directory `expected_figures` as well as `expected_output`.
+
 ["A fast marching algorithm for the factored eikonal
 equation"](https://dx.doi.org/10.1016/j.jcp.2016.08.012) discusses an algorithm
 for solving the factored eikonal equation. Practically, this can be used to
