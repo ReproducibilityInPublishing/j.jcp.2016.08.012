@@ -83,3 +83,6 @@ jupyter notebook showing this progress over time `ReproducibilityPlot.ipynb`.
 ## Acknowledgements
 We want acknowledge the authors for their fine work on this experiment. We
 succeeded with this project where many others had failed. The authors should be commended on putting together high quality work.
+
+## Grant Acknowledgement
+This work was partially funded by NSF grants OAC-1839010 and CNS-1646305.
